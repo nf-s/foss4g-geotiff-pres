@@ -1,0 +1,10 @@
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 80vw;
+  max-height: 60vh;
+}
+
+img {
+  border: none !important;
+}

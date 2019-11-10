@@ -1,49 +1,686 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+  <link rel="stylesheet"
+    href="css/reset.css" />
+  <link rel="stylesheet"
+    href="css/reveal.css" />
+  <link rel="stylesheet"
+    href="css/theme/black.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <link rel="stylesheet"
+    href="index.css" />
 
-		<script src="js/reveal.js"></script>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet"
+    href="lib/css/monokai.css" />
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = window.location.search.match(/print-pdf/gi)
+      ? "css/print/pdf.css"
+      : "css/print/paper.css";
+    document.getElementsByTagName("head")[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+              ## Wrangling GeoTIFFs in the browser
+          
+              Nick Forbes-Smith 
+
+              <span style="font-weight: 100; font-size: 50%;">CSIRO's Data61 &mdash; RMIT University</span><br>
+              <span style="font-weight: 100; font-size: 50%;">Hobart, Tasmania, Australia</span>
+             
+            </textarea>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+                      The first <span style="font-weight: 100">(and last)</span> FOSS4G Geotiff.js talk!
+      
+                      <h1 class="fragment">Nope</h1>
+                
+             
+                    </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+
+                        <ul>
+                            <li class="fragment">Talk 1</li>
+                            <li class="fragment">Talk 2</li>
+                            <li class="fragment">Talk 3</li>
+                            <li class="fragment">Talk 4</li>
+                            <li class="fragment">Talk 5</li>
+                          </ul>
+        
+                       
+                      </textarea>
+        </section>
+      </section>
+
+      <!-- THis talk is less technical - more about what can be done! -->
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## I make
+
+              - Web map apps w/
+              - distributed job processing back-ends
+               
+            <span style="font-weight: 100">for natural hazard modeling</span>
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+                Wildfire
+            
+                <img class="fragment fade-in" src="img/fire.jpg" alt="CSS Overlay">
+              </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+                Climate change risk
+            
+                <img class="fragment fade-in" src="img/climate-screenshot.png" alt="Climate risk">
+              </textarea>
+        </section>
+
+
+        <section data-markdown>
+          <textarea data-template>
+                Evacuation
+
+                <img class="fragment fade-in" src="img/evac-1.png" alt="Evac risk">
+                
+              </textarea>
+        </section>
+
+
+        <section data-markdown>
+          <textarea data-template>
+                Flood
+                
+                <img class="fragment fade-in" src="img/flood.png" alt="Flooding">
+              </textarea>
+        </section>
+      </section>
+      <section data-markdown>
+        <textarea data-template>
+            ## JS libraries
+
+            <ul>
+              <li class="fragment">Angular, PrimeNG</li>
+              <li class="fragment">Mapbox GL JS, Terria/Cesium</li>
+              <li class="fragment">d3, <a>Plotty</a></li>
+              <li class="fragment"><a>Geotiff.js</a>, <a>Georaster</a></li>
+              <li class="fragment"><a>GPU.js</a>, <a>Geoblaze</a></li>
+            </ul>
+
+          </textarea>
+      </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+        ## Show GeoTIFF on Web&#8209;map
+
+        <span style="font-weight: 100; font-size: 50%;">Not going to talk about GeoTIFF</span>
+
+        --------------
+    
+        Usual method: WMS
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+        ### WMS
+
+        1. Load GeoTIFF into WMS Server (GeoServer)
+        2. Create style(s)
+        3. Publish
+
+
+        4. Client (mapbox, leaflet...) requests static image tiles
+        
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+          Okay, this is great
+
+            --------------
+
+          We're done right?
+      </textarea>
+        </section>
+
+
+        <!-- <section data-markdown>
+          <textarea data-template>
+          Multi-dimensional
+
+          Too many dimensions and caching becomes impractical 
+      </textarea>
+        </section> -->
+
+
+
+        <section data-markdown>
+          <textarea data-template>
+          ...GeoTIFFs are being created on demand?
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+        ...interactive/dynamic styling?
+
+        <!-- Dynamic styling is painful (and also makes caching impractical) -->
+
+        <!-- Every change of style fetches new tiles from server -> every request is time and money! -->
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+        ...inspect raw values?
+
+        <!-- No access to actual values - to inspect values have to use GetFeatureInfo WMS request -->
+      </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+        ...run script on values?
+      </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ...I have millions (or **BILLIONS!**) of geotiffs?
+      </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+        ### So many requests to the server!
+
+        Even if the browser already has the data
+      </textarea>
+        </section>
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+        Forget that rubbish! 
+
+        ## We have GeoTIFF.js and WebGL!
+
+        <span style="font-weight: 100; font-size: 50%;">I'm joking WMS is not rubbish</span>
+
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Single layer
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Colour scale
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Set min/max and clamp
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Blending layers with CSS
+
+          <img class="fragment fade-in" src="img/css-overlay.jpg" alt="CSS Overlay">
+
+        </textarea>
+        </section>
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+        ## Analyse Geotiff
+
+        --------------
+    
+        Usual method: WPS
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+        ### WPS
+
+        1. Write python script
+            - Read in data via WCS
+            - Crunch the numbers
+            - Return result
+        2. Load scripts into WPS server (eg PyWPS)
+        3. Publish
+
+        4. Client executes WPS processes
+        
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+          Okay, this is great too
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ...I already have the data in the browser?!
+      </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+          ...more requests to a server!
+      </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ...100s of requests using the same data in realtime?
+
+          <!-- Cache values between analysis -->
+      </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            <span style="font-weight: 100">Ridiculous</span>
+      </textarea>
+        </section>
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            But we can also do this with 
+            
+            ## JavaScript
+
+            in the browser!
+
+            <span style="font-weight: 100; font-size: 50%;">Wooo "edge computing"!</span>
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Contouring
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Statistics
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          Raster algebra
+
+
+https://www.omnicalculator.com/physics/wet-bulb#how-to-calculate-the-wet-bulb-temperature
+
+        </textarea>
+
+        </section>
+
+
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+          ## What? How?
+
+          --------------
+            
+          - Fetch + decode data &mdash; <a>Geotiff.js</a>
+          - Data wrapper &mdash; <a>Georaster</a>
+          - Visualise &mdash; <a>Plotty</a>
+          - Analyse &mdash; <a>Geoblaze</a>, <a>GPU.js, (d3)</a>
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Geotiff.js
+
+
+Pure JavaScript implementation of Geotiff
+
+- Reads in file 
+- Decodes and decompresses
+- HTTP range requests for subsets (exent or band)
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Link to geotiff code
+        </textarea>
+
+        </section>
+
+
+
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Georaster
+
+          > Wrapper around Georeferenced Rasters
+
+          GeoTIFF, NetCDF, JPG, and PNG &mdash; provides a standard interface
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Plotty
+Colourise 2d raster using Canvas API and WebGL (with JS fallback)
+
+Set value domain, clamp, transform matrix, colorscale, raster/band algebra
+
+<!-- Show plotty NDVI (show set expression) - more RGB imagery   -->
+
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Geoblaze
+
+          - Basic statistics (min, max, mean, mode) 
+          - Band arithmetic and histogram generation
+
+          No WebGL - all done on CPU.
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## GPU.js
+
+          Kernal matrix computation
+
+          Can be used for raster algebra
+          
+          Reprojection...
+
+          Interpolation
+
+          <span style="font-weight: 100; font-size: 50%;">and other crazy stuff</span>
+
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## d3-contour
+
+          Realtime contouring / isobands
+        </textarea>
+        </section>
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+          ## Demo
+        </textarea>
+
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+          ## Limitations
+
+          --------------
+
+          - File size
+          - Projection (Web mercator...)
+          - Client-side computation (GPU)
+          - Service-oriented?
+        </textarea>
+        </section>
+
+
+
+        <section data-markdown>
+          <textarea data-template>
+          ## File size
+
+          WCS can query NetCDF (faster?)
+
+          <!-- then getting file through WCS and then WebGL rendering faster and more interactive -->
+
+          <!-- Smaller datasets generate more PNG than original dataset!? -->
+
+          <!-- Size comparison between geotiff and png -->
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Client-side computation
+
+          decompress, render pixels...
+        
+          Limited number crunching
+        </textarea>
+
+        </section>
+
+
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Complex queries
+
+          Drill through dimensions?
+          - Might have to fetch single value from many files
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Addex complexity
+
+          Just want to show static imagery?
+
+          Probably not worth it - WMS is supported by everything!
+
+          <!-- mainly directed towards greyscale scientific datasets!!! -->
+          
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## WMS is service oriented
+          
+          JS librares are for client-side use 
+          
+          <span style="font-weight: 100; font-size: 50%;">Can be used with Node.js but Python libraries are better!</span>
+        </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ## Other raster formats
+
+          WMS supports more formats...
+          I have turned 100 NetCDFs (15GB) into 400,000 geotiffs!!!
+              This is only 8 of 32 CMIP5 projects and only 4 of 8-10 observation 
+        </textarea>
+
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+          ## Future
+
+          --------------
+
+          - pngraw
+          - COG
+          - Satelite imagery
+          - NetCDF
+          - Reprojection (WebGL?)
+        </textarea>
+        </section>
+
+
+        <section data-markdown>
+          <textarea data-template>
+          ### pngraw
+          24 bit integer packed into RGB channels - see mapbox elevation
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### NetCDF
+          - very fast query - if chunked properly
+          - Can drill through many dimensions
+        </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+          ## Other cool things
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### 3D
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### Cog
+
+          
+Cloud Optimized GeoTIFFs... - Layout friendly for network consumption (HTTP range requests) - tiled, compressed, overview images - efficient access to subset
+
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### Hillshade
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### PNG raw
+        </textarea>
+        </section>
+
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+        ## I want this now!
+
+        --------------
+
+        SHow Ivan talk + other Leaflet, layers...
+
+https://geotiff.io/ - have a play with geotiffs in the browser and geoblaze...
+      </textarea>
+      </section>
+
+
+
+      <section data-markdown>
+        <textarea data-template>
+        ## Thanks
+        
+        --------------
+
+        Questions?
+      </textarea>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: "plugin/markdown/marked.js" },
+        { src: "plugin/markdown/markdown.js" },
+        { src: "plugin/notes/notes.js", async: true },
+        { src: "plugin/highlight/highlight.js", async: true }
+      ]
+    });
+  </script>
+</body>
+
 </html>
