@@ -37,7 +37,10 @@
 <body>
   <div class="reveal">
     <div class="slides">
+      <!-- Think about the title! What kinds of people are attracted towards the title? - Probably quite technical -->
+
       <section data-markdown>
+
         <textarea data-template>
               ## Wrangling GeoTIFFs in the browser
           
@@ -51,22 +54,23 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-                      The first <span style="font-weight: 100">(and last)</span> FOSS4G Geotiff.js talk!
+                      The first <span style="font-weight: 100">(and last)</span> FOSS4G talk on Geotiff.js!
       
-                      <h1 class="fragment">Nope</h1>
-                
-             
+                      Probably not...
                     </textarea>
         </section>
         <section data-markdown>
           <textarea data-template>
 
-                        <ul>
-                            <li class="fragment">Talk 1</li>
-                            <li class="fragment">Talk 2</li>
-                            <li class="fragment">Talk 3</li>
-                            <li class="fragment">Talk 4</li>
-                            <li class="fragment">Talk 5</li>
+                        <ul style="font-size: 80%;">
+                            <li class="fragment">FOSS4G 2019 - Discover huge raster files in the Browser with geotiff.js - Fabian Schindler</li>
+                            <li class="fragment">FOSS4G 2019 - Algorithm Walk-through: How to Visualize a Large GeoTIFF on Your Web Map - Daniel J. Dufour</li>
+                            <li class="fragment">FOSS4G 2019 - Interactive (EO) data visualization in the web -  Lubomír Bucek & Daniel Santillan Pedrosa</li>
+                            <li class="fragment">FOSS4G 2019 - Breaking the curse of raster processing software-as-a-service - Iván Sánchez Ortega</li>
+                            <li class="fragment">FOSS4G 2018 - Wave Good-Bye to Buttonology: Satellite Imagery Analysis Made Easy with GeoTIFF.io - Daniel Dufour & Stephen Peyton</li>
+                            <li class="fragment">FOSS4G 2016 - geotiff.js and plotty.js - Visualizing Scientific Raster Data in the Browser - Fabian Schindler</li>
+                            <li class="fragment">...</li>
+                            <li class="fragment">...</li>
                           </ul>
         
                        
@@ -75,6 +79,7 @@
       </section>
 
       <!-- THis talk is less technical - more about what can be done! -->
+      <!-- Code examples are linked -->
       <section>
         <section data-markdown>
           <textarea data-template>
@@ -86,38 +91,77 @@
             <span style="font-weight: 100">for natural hazard modeling</span>
             </textarea>
         </section>
-        <section data-markdown>
+        <section data-markdown
+          data-transition="slide-in fade-out">
           <textarea data-template>
                 Wildfire
             
-                <img class="fragment fade-in" src="img/fire.jpg" alt="CSS Overlay">
+                <img  src="img/new-fire1.png" alt="Fire 2">
               </textarea>
         </section>
 
-        <section data-markdown>
+        <section data-markdown
+          data-transition="fade">
+          <textarea data-template>
+                Wildfire
+
+                <img  src="img/newfire2.png" alt="Fire 1">
+              </textarea>
+        </section>
+
+        <section data-markdown
+          data-transition="slide-in fade-out">
           <textarea data-template>
                 Climate change risk
             
-                <img class="fragment fade-in" src="img/climate-screenshot.png" alt="Climate risk">
+                <img  src="img/new-climate1.png" alt="Climate risk 1">
+              </textarea>
+        </section>
+
+        <section data-markdown
+          data-transition="fade">
+          <textarea data-template>
+                Climate change risk
+            
+                <img  src="img/climate2.png" alt="Climate risk 2">
               </textarea>
         </section>
 
 
-        <section data-markdown>
+        <section data-markdown
+          data-transition="slide-in fade-out">
           <textarea data-template>
                 Evacuation
 
-                <img class="fragment fade-in" src="img/evac-1.png" alt="Evac risk">
-                
+                <img  src="img/new-evac1.png" alt="Evac risk 2">                
+              </textarea>
+        </section>
+
+        <section data-markdown
+          data-transition="fade">
+          <textarea data-template>
+                Evacuation
+
+                <img  src="img/evac2.png" alt="Evac risk 2">
               </textarea>
         </section>
 
 
-        <section data-markdown>
+        <section data-markdown
+          data-transition="slide-in fade-out">
           <textarea data-template>
                 Flood
                 
-                <img class="fragment fade-in" src="img/flood.png" alt="Flooding">
+                <img src="img/newflood1.png" alt="Flooding">
+              </textarea>
+        </section>
+
+        <section data-markdown
+          data-transition="fade">
+          <textarea data-template>
+                Flood
+                
+                <img src="img/newflood2.png" alt="Flooding">
               </textarea>
         </section>
       </section>
@@ -126,11 +170,11 @@
             ## JS libraries
 
             <ul>
-              <li class="fragment">Angular, PrimeNG</li>
-              <li class="fragment">Mapbox GL JS, Terria/Cesium</li>
-              <li class="fragment">d3, <a>Plotty</a></li>
-              <li class="fragment"><a>Geotiff.js</a>, <a>Georaster</a></li>
-              <li class="fragment"><a>GPU.js</a>, <a>Geoblaze</a></li>
+              <li>Angular, PrimeNG</li>
+              <li>Mapbox GL JS, Terria/Cesium</li>
+              <li>d3, <a>Plotty</a></li>
+              <li><a>Geotiff.js</a>, <a>Georaster</a></li>
+              <li><a>GPU.js</a>, <a>Geoblaze</a></li>
             </ul>
 
           </textarea>
@@ -241,6 +285,10 @@
         <section data-markdown>
           <textarea data-template>
           Single layer
+
+          <img src="img/show-singlelayer.png" alt="CSS Overlay">
+
+          
         </textarea>
 
         </section>
@@ -248,6 +296,8 @@
         <section data-markdown>
           <textarea data-template>
           Colour scale
+
+          <video data-autoplay src="video/show-colscale.webm"></video>
         </textarea>
 
         </section>
@@ -255,6 +305,8 @@
         <section data-markdown>
           <textarea data-template>
           Set min/max and clamp
+
+          <video data-autoplay src="video/show-minmax.webm"></video>
         </textarea>
         </section>
 
@@ -262,7 +314,7 @@
           <textarea data-template>
           Blending layers with CSS
 
-          <img class="fragment fade-in" src="img/css-overlay.jpg" alt="CSS Overlay">
+          <img src="img/css-overlay.jpg" alt="CSS Overlay">
 
         </textarea>
         </section>
@@ -343,23 +395,26 @@
         <section data-markdown>
           <textarea data-template>
           Contouring
+
+          <video data-autoplay src="video/analysis-contour.webm"></video>
         </textarea>
         </section>
 
         <section data-markdown>
           <textarea data-template>
           Statistics
+
+          <video data-autoplay src="video/analysis-stats.webm"></video>
         </textarea>
 
         </section>
 
         <section data-markdown>
-          <textarea data-template>
-          Raster algebra
-
-
-https://www.omnicalculator.com/physics/wet-bulb#how-to-calculate-the-wet-bulb-temperature
-
+          <textarea>
+          <div style="margin-top: -40px;">Raster algebra</div >
+          <img src="img/wetbulbformula.png" alt="Wetbulb Formula" style="width: 35vw;padding: 20px; ">
+          <br/>
+          <video data-autoplay src="video/analysis-raster-algebra.webm"></video>
         </textarea>
 
         </section>
@@ -387,25 +442,41 @@ https://www.omnicalculator.com/physics/wet-bulb#how-to-calculate-the-wet-bulb-te
           <textarea data-template>
           ## Geotiff.js
 
+          <!-- The star of the talk -->
 
-Pure JavaScript implementation of Geotiff
+          This does all the hard work!
 
+Pure JavaScript implementation of Geotiff:  
 - Reads in file 
+- HTTP range requests for subsets (bbox/band)
 - Decodes and decompresses
-- HTTP range requests for subsets (exent or band)
         </textarea>
 
         </section>
 
         <section data-markdown>
           <textarea data-template>
-          ## Link to geotiff code
+            From <a>https://geotiffjs.github.io/geotiff.js/</a>
+
+```js
+const response = await fetch(someUrl);
+const arrayBuffer = await response.arrayBuffer();
+const tiff = await GeoTIFF.fromArrayBuffer(arrayBuffer);
+
+const image = await tiff.getImage();
+
+// Get pixels
+const pixels = await image.readRasters();
+
+// Get some properties
+const origin = image.getOrigin();
+const resolution = image.getResolution();
+const bbox = image.getBoundingBox();
+...
+```
         </textarea>
 
         </section>
-
-
-
 
         <section data-markdown>
           <textarea data-template>
@@ -414,7 +485,32 @@ Pure JavaScript implementation of Geotiff
           > Wrapper around Georeferenced Rasters
 
           GeoTIFF, NetCDF, JPG, and PNG &mdash; provides a standard interface
+
+
         </textarea>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            From <a>https://github.com/GeoTIFF/georaster</a>
+
+```js
+const parseGeoraster = require("georaster");
+
+const response = await fetch(someUrl);
+const arrayBuffer = await response.arrayBuffer();
+
+const georaster = await parseGeoraster(arrayBuffer)
+
+// Get pixels
+const pixels = georaster.values;
+
+// Get some properties
+const projection = georaster.projection;
+...
+  ```
+          </textarea>
 
         </section>
 
@@ -433,43 +529,118 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
 
         <section data-markdown>
           <textarea data-template>
-          ## Geoblaze
+            From <a>https://github.com/santilland/plotty</a>
 
-          - Basic statistics (min, max, mean, mode) 
-          - Band arithmetic and histogram generation
+```js
+plot = new plotty.plot({
+  canvas: document.getElementById("canvas"),
+  data: somePixels, 
+  width: width, 
+  height: height,
+  domain: [-1, 1], 
+  colorScale: 'viridis'
+});
+plot.render();
+```
+            </textarea>
+        </section>
 
-          No WebGL - all done on CPU.
-        </textarea>
+        <section data-markdown>
+          <textarea data-template>
+            ## Geoblaze
+  
+            - Basic statistics (min, max, mean, mode) 
+            - Band arithmetic and histogram generation
+  
+            No WebGL - all done on CPU.
+          </textarea>
+
+        </section>
+
+
+        <section data-markdown>
+          <textarea data-template>
+            From <a>https://docs.geoblaze.io/</a>
+
+```js
+const mean = geoblaze.mean(georaster, geometry);
+
+const ndvi = geoblaze.bandArithmetic(georaster, '(c - b)/(c + b)');
+
+const histogram = geoblaze.histogram(georaster, geometry, options);
+```        
+            </textarea>
 
         </section>
 
         <section data-markdown>
           <textarea data-template>
-          ## GPU.js
-
-          Kernal matrix computation
-
-          Can be used for raster algebra
-          
-          Reprojection...
-
-          Interpolation
-
-          <span style="font-weight: 100; font-size: 50%;">and other crazy stuff</span>
-
-        </textarea>
+                ## GPU.js
+      
+                Kernel functions - matrix algebra
+      
+                - Raster calculation
+                - Interpolation
+                - Reprojection...
+      
+                <span style="font-weight: 100; font-size: 50%;">and other crazy stuff</span>
+      
+              </textarea>
 
         </section>
 
         <section data-markdown>
           <textarea data-template>
-          ## d3-contour
+            From <a>https://github.com/gpujs/gpu.js</a>
 
-          Realtime contouring / isobands
-        </textarea>
+```js
+import { GPU } from 'gpu.js';
+
+const gpu = new GPU();
+const multiplyMatrix = 
+  gpu.createKernel(function(a: number[][], b: number[][]) {
+    let sum = 0;
+    for (let i = 0; i < 512; i++) {
+      sum += a[this.thread.y][i] * b[i][this.thread.x];
+    }
+    return sum;
+  }).setOutput([512, 512]);
+
+const c = multiplyMatrix(a, b) as number[][];
+```
+                </textarea>
+
         </section>
+
+
+        <section data-markdown>
+          <textarea data-template>
+            ## D3
+  
+            - contouring / isobands
+            - streamlines
+            - arrows / barbs
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+                From <a>https://github.com/d3/d3-contour</a>
+    
+```js
+const contours: MultiPolygon[] = d3.contours()
+    .size([width, height])
+    .thresholds([0,1,2,3,...])
+    (pixelValues);
+```
+              </textarea>
+        </section>
+
+
 
       </section>
+
+
 
       <section>
         <section data-markdown>
@@ -488,19 +659,24 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
           --------------
 
           - File size
-          - Projection (Web mercator...)
+          - Projections
           - Client-side computation (GPU)
-          - Service-oriented?
+          - Service-oriented or API?
+          - Client-side complexity
+          - Other raster formats
         </textarea>
         </section>
-
 
 
         <section data-markdown>
           <textarea data-template>
           ## File size
 
-          WCS can query NetCDF (faster?)
+          - GeoTIFF files can be large
+            - Don't want to load entire file!
+          - Can load COGs or through WCS
+
+          <!-- WCS can query NetCDF (faster?) -->
 
           <!-- then getting file through WCS and then WebGL rendering faster and more interactive -->
 
@@ -513,39 +689,25 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
 
         <section data-markdown>
           <textarea data-template>
+          ## Projection
+
+          Web mercator... urgh
+
+          <!-- WCS, in browser reprojection? -->
+        </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
           ## Client-side computation
 
-          decompress, render pixels...
+          Decompress, render pixels to canvas...
         
-          Limited number crunching
+          Analysing values...
+
+          <!-- Drill through dimensions?
+          - Might have to fetch single value from many files -->
         </textarea>
-
-        </section>
-
-
-
-        <section data-markdown>
-          <textarea data-template>
-          ## Complex queries
-
-          Drill through dimensions?
-          - Might have to fetch single value from many files
-        </textarea>
-
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-          ## Addex complexity
-
-          Just want to show static imagery?
-
-          Probably not worth it - WMS is supported by everything!
-
-          <!-- mainly directed towards greyscale scientific datasets!!! -->
-          
-        </textarea>
-
         </section>
 
         <section data-markdown>
@@ -559,16 +721,29 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
 
         </section>
 
+        <!-- <section data-markdown>
+          <textarea data-template>
+          ## Complex queries
+
+          
+        </textarea>
+
+        </section> -->
+
         <section data-markdown>
           <textarea data-template>
-          ## Other raster formats
+          ## Client-side complexity
 
-          WMS supports more formats...
-          I have turned 100 NetCDFs (15GB) into 400,000 geotiffs!!!
-              This is only 8 of 32 CMIP5 projects and only 4 of 8-10 observation 
+          Just want to show static imagery?
+
+          Probably not worth it - WMS is supported by everything!
+
+          <!-- mainly directed towards greyscale scientific datasets!!! -->
+          
         </textarea>
 
         </section>
+
       </section>
 
       <section>
@@ -578,19 +753,21 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
 
           --------------
 
-          - pngraw
-          - COG
-          - Satelite imagery
+          - COG / Satelite imagery
           - NetCDF
           - Reprojection (WebGL?)
         </textarea>
         </section>
 
-
         <section data-markdown>
           <textarea data-template>
-          ### pngraw
-          24 bit integer packed into RGB channels - see mapbox elevation
+          ### Cloud Optimized GeoTIFF (COG)
+
+- Layout friendly for network consumption (HTTP range requests)
+- Can be tiled, compressed, and contain overview images
+
+Useful for accessing large raster datasets - eg Satelite/aerial imagery
+
         </textarea>
         </section>
 
@@ -601,6 +778,26 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
           - Can drill through many dimensions
         </textarea>
         </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          ### Reprojection
+          
+
+          <video data-autoplay src="video/extra-project.webm"></video>
+        </textarea>
+        </section>
+
+        <!-- <section data-markdown>
+          <textarea data-template>
+          ## Other raster formats
+
+          
+          I have turned 100 NetCDFs (15GB) into 400,000 geotiffs!!!
+              This is only 8 of 32 CMIP5 projects and only 4 of 8-10 observation 
+        </textarea>
+
+        </section> -->
       </section>
 
       <section>
@@ -613,28 +810,25 @@ Set value domain, clamp, transform matrix, colorscale, raster/band algebra
         <section data-markdown>
           <textarea data-template>
           ### 3D
-        </textarea>
-        </section>
 
-        <section data-markdown>
-          <textarea data-template>
-          ### Cog
-
-          
-Cloud Optimized GeoTIFFs... - Layout friendly for network consumption (HTTP range requests) - tiled, compressed, overview images - efficient access to subset
-
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qDazKJQBxuE?controls=0&amp;start=42" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </textarea>
         </section>
 
         <section data-markdown>
           <textarea data-template>
           ### Hillshade
+
+          <video data-autoplay src="video/extra-hillshade.webm"></video>
         </textarea>
         </section>
 
         <section data-markdown>
           <textarea data-template>
           ### PNG raw
+          24 bit integer packed into RGB channels - see mapbox elevation tiles
+
+          Hybrid WMS approach?
         </textarea>
         </section>
 
@@ -646,14 +840,12 @@ Cloud Optimized GeoTIFFs... - Layout friendly for network consumption (HTTP rang
 
         --------------
 
-        SHow Ivan talk + other Leaflet, layers...
+<a>geotiff.io/</a> - have a play with geotiffs in the browser and geoblaze
+<a href="https://github.com/GeoTIFF/georaster-layer-for-leaflet">georaster-layer-for-leaflet</a>
+<a href="https://github.com/GeoTIFF/ol-geotiff">ol-geotiff</a>
 
-https://geotiff.io/ - have a play with geotiffs in the browser and geoblaze...
       </textarea>
       </section>
-
-
-
       <section data-markdown>
         <textarea data-template>
         ## Thanks
