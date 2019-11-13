@@ -2,7 +2,13 @@
 .reveal video,
 .reveal iframe {
   max-width: 90vw;
-  max-height: 55vh;
+  max-height: 64vh;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 img {
