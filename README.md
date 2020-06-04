@@ -3,6 +3,8 @@
 Presented at [FOSS4G Oceania 2019](https://2019.foss4g-oceania.org/) in Wellington New Zealand
 ### [Slides](https://nf-s.github.io/foss4g-geotiff-pres/)
 
+### [Video](https://www.youtube.com/watch?v=5-EOYUx2lgY)
+
 ## Description
 
 In 2019 there are a host of JavaScript libraries which make it possible to work with GeoTIFFs directly in the browser. In this talk we’ll look at how people can go about loading, visualising and even analysing GeoTIFFs with 0 server-side technology.
